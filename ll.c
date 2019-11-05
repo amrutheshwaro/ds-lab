@@ -18,15 +18,14 @@ void insert_beg(){
 		temp->link=start;
 		start=temp;
 	}
-}
-void delete_beg(){
+}void delete_beg(){
 	if(start==NULL){
 		printf("Empty list.\n");
 		exit(0);
 	}
 	else{
 		ptr=start;
-		start=start->link;
+		start=ptr->link;
 		free(ptr);
 	}
 }
@@ -86,11 +85,11 @@ void insert_anyloc(){
 void display(){
 	int count=0;
 	ptr=start;
-	while(ptr->link!=NULL){
-		count++;
+	while(ptr!=NULL){
+		++count;
 		ptr=ptr->link;	
 	}
-	if(count<0){
+	if(count==0){
 		printf("Linked list is empty.\n");
 		exit(0);
 	}
