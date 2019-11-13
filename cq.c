@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define size 5
-int cq[size], front=-1, rear=-1, item;
+int cq[size], i, front=-1, rear=-1, item;
 void insert(){
 	if(rear==(front-1)||(front==0&&rear==(size-1)))
-		printf("Overflow\n");
+		printf("Overflow.\n");
 	else{
 		printf("Enter the element.\n");
 		scanf("%d", &item);
@@ -27,13 +27,12 @@ void delete(){
 	}
 }
 void display(){
-	if(rear=-1&&front==-1)
+	if(rear==-1&&front==-1)
 		printf("Circular queue is empty.\n");
 	else{
-		int i=0;
-		for(i=0; i!=rear; i=(i+1)%size)
+		for(i=front; i!=rear; i=(i+1)%size)
 			printf("%d--", cq[i]);
-		printf("%d--", cq[i]);
+		printf("%d\n", cq[i]);
 	}		
 }
 void main(){
@@ -55,5 +54,3 @@ void main(){
 		}
 	}
 }
-	
-		
